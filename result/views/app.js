@@ -39,12 +39,15 @@ app.controller('statsCtrl', function($scope){
 function getPercentages(a, b) {
   var result = {};
 
-  if (a + b > 0) {
+  if ((a + b) > 0) 
+	{
     result.a = Math.round(a / (a + b) * 100);
-    result.b = 100 - result.a;
-  } else {
-    result.a = result.b = 50;
-  }
 
+    result.b = 100 - result.a;
+  } 
+  else 
+	{
+    result.b = result.a = 50;
+  }
   return result;
 }
